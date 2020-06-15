@@ -1,4 +1,4 @@
-# Developing and Testing an Automated Trading Strategy using Machine Learning in Python
+# Designing an Automated Trading Strategy using Machine Learning
 
 ## about this liveProject
 
