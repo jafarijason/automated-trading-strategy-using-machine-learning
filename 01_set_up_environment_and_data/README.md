@@ -22,7 +22,7 @@ Set up your Python environment, test Zipline, and download the Quandl Wiki data
 4. Now you are running a shell inside the container and can access the `conda environments`.
     - Run `conda env list` to see that there are a `base`, `ml4t` (default), and a `ml4t-`zipline` environment.
     - You can switch to another environment using `conda activate <env_name>`. 
-        - However, before doing so the first time, you may get an error message suggesting you run `conda init bash`. After doing so, reload the shell with the command `source .bashrc`. 
+        - However, before doing so the first time, you may get an error message suggesting you run `conda init bash`. After doing so, reload the shell with the command `source .bashrc`.
 5. To run Zipline backtests, we need to `ingest` data. See the [Beginner Tutorial](https://www.zipline.io/beginner-tutorial.html) for more information. The image has been configured to store the data in a `.zipline` directory in the directory wehre you started the container (which should be the root folder of the project starter code). 
     - From the command prompt of the container shell, run
     ```bash
