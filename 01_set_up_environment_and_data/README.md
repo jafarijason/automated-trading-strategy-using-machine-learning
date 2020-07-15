@@ -13,12 +13,12 @@ Set up your Python environment with the requisite libraries, install and test Zi
 3. [Register](https://www.quandl.com/sign-up) for a (free) personal **Quandl account** to obtain an API key that you'll below to download stock price data.  
 3. We'll be using a **Docker image** based on Ubuntu 20.04 with the Anaconda Python distribution installed. It also contains two `conda` environments, one to run backtests with Zipline and one for everything else. To work with the Docker image, run the following command that does several things at once:
     ```docker
-   docker run -it -v $(pwd):/home/manning/liveproject -p 8888:8888 -e QUANDL_API_KEY=<yourkey> --name liveproject appliedai/manning:starter bash
+   docker run -it -v $(pwd):/home/manning/liveproject -p 8888:8888 -e QUANDL_API_KEY=<yourkey> --name liveproject appliedai/manning:liveproject bash
     ```
     - the first time you run the command, it pulls the image with the tag `starter` from the repository `manning` on the Docker Hub account `appliedai` 
     - creates a local container with the name `liveproject` and runs it in interactive mode,
     - mounts the current directory containing the starter project files as a volume in the directory `/home/manning/liveproject` inside the container,
-    - sets the environment variable `QUANDL_API_KEY` with the value of your key (that you need to fill in for `<yourkey>`) to facilitate data download, and
+    - sets the environment variable `QUANDL_API_KEY` with the value of your key (that you need to fill in for `<yourkey>` - if you have set up a local environment variable of this name you can use `$QUANDL_API_KEY`) to facilitate data download, and
     - starts a `bash` terminal inside the container, resulting in a new command prompt.
 4. Now you are running a shell inside the container and can access the `conda` environments.
     - Run `conda env list` to see that there are a `base`, `liveproject` (default), and a `liveproject-zipline` environment.
@@ -46,6 +46,7 @@ Set up your Python environment with the requisite libraries, install and test Zi
     - You can run the command `zipline ingest` from a notebook cell or the command line (after activating the `conda` environment). It creates the default `quandl` data bundle we'll be working with. 
    - You should see numerous messages as Zipline processes around 3,000 stock price series
    - The command `zipline bundles` displays the ingest history.
+   - When running a backtest, you will likely encounter an [error](https://github.com/quantopian/zipline/issues/2517) because the current Zipline version requires a country code entry in the `exchanges` table of the `assets-7.sqlite` database where it stores the asset metadata. The linked issue describes how to address this by [opening the SQLite database](https://sqlitebrowser.org/dl/) and entering `US` in the `country_code` field of the `exchanges`.
    - Now you can implement the [Dual Moving Average Cross-Over example](https://www.zipline.io/beginner-tutorial.html#access-to-previous-prices-using-history) from the Zipline tutorial in the following notebook cells to familiarize yourself with the Zipline interface. It should display the backtest results at the end.
 7. Finally, after logging into Quandl, download the [Quandl Wiki Stock data](https://www.quandl.com/tables/WIKIP/WIKI-PRICES/export) and unzip into the root directory of the project starter files as `us_stocks.csv`. Then, create a second notebook to simplify the data as follows (see pandas [docs](https://pandas.pydata.org/docs/) as necessary), using the `liveproject` environment: 
     - Convert the `date` column to `datetime` format

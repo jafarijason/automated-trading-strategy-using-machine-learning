@@ -37,5 +37,5 @@ The principal goal of the project was to build a trading strategy using machine 
 ## Resources
 
 - Zipline [docs](https://www.zipline.io/index.html)
-- Sample [implementation](https://github.com/stefan-jansen/machine-learning-for-trading/blob/master/08_ml4t_workflow/04_ml4t_workflow_with_zipline/02_backtesting_with_zipline.ipynb) of a long-short strategy using a custom DataFrameLoader.
+- Sample [implementation](https://github.com/stefan-jansen/machine-learning-for-trading/blob/master/08_ml4t_workflow/04_ml4t_workflow_with_zipline/02_backtesting_with_zipline.ipynb) of a long-short strategy based on ML predictions using a custom DataFrameLoader.
 - pyfolio [docs](https://quantopian.github.io/pyfolio/)
