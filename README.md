@@ -22,7 +22,7 @@ Listed under the bullets are the Python libraries for the technique.
 
 - Setting up a local environment and sourcing data
     - `Docker`: containers that package standardized code and run across platforms 
-- Engineering financial features for predictive modleing
+- Engineering financial features for predictive modeling
     - `pandas`: data manipulation and analysis
     - TA-Lib: technical analysis library for python
 - Training a regularized linear regression model
@@ -53,7 +53,7 @@ The project is broken into four parts.
 
 4. Building, backtesting, and evaluating a trading strategy
 
-The skills covered in order are the following: working with docker, manipulating financial data, interpreting algorithm results, designing and evaluating a trading strategy, and producing an actionable report. The deliverable from each part is a Jupyter notebook (preferably on GitHub) documenting your workflow and results. The final milestone will be a notebook converted to html or a PDF to share the conclusions with your manager at the investment firm. Each section builds upon the previous and will test your skills in a different area of financial data science. As you go through the project, keep in mind the overall objective: to define a trading strategy that shows promising backtest results. The project is representative of problems solved by data scientists in the investment industry industry and utilizes very popular tools for data science in Python.
+The skills covered in order are the following: working with docker, manipulating financial data, interpreting algorithm results, designing and evaluating a trading strategy, and producing an actionable report. The deliverable from each part is a Jupyter notebook (preferably on GitHub) documenting your workflow and results. The final milestone will be a notebook converted to html or a PDF to share the conclusions with your manager at the investment firm. Each section builds upon the previous and will test your skills in a different area of financial data science. As you go through the project, keep in mind the overall objective: to define a trading strategy that shows promising backtest results. The project is representative of problems solved by data scientists in the investment industry and utilizes very popular tools for data science in Python.
 
 ## Prerequisites
 The liveProject is for intermediate Python programmers who know the basics of data science. To begin this liveProject, you will need to be familiar with:
@@ -66,7 +66,6 @@ TOOLS
 - Basics of Jupyter Notebook
 
 An enthusiasm for solving problems and self-led learning will also prove quite useful (and not just in this project)!
-
 
 ## Python libraries and setup
 
