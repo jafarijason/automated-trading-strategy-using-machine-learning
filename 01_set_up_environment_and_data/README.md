@@ -7,16 +7,20 @@ Set up your Python environment with the requisite libraries, install and test Zi
 ## Workflow
 
 1. **Install [Docker Desktop](https://docs.docker.com/desktop/)** for [Windows](https://docs.docker.com/docker-for-windows/install/) or [Mac OS](https://docs.docker.com/docker-for-mac/install/).
+    - For guidance on installing Docker for Windows 10 Home, which requires an additional step to enable the virtual machine platform, see [here](https://docs.docker.com/docker-for-windows/install-windows-home/).
     - Review the "Getting Started" guides for [Windows](https://docs.docker.com/docker-for-windows/) or [Mac OS](https://docs.docker.com/docker-for-mac/). 
     - Under *Preferences*, look for *Resources* to find out how you can **increase the memory** allocated to the container; the default setting is too low given the size of the data. Increase to at least 4GB.
 2. **Clone the starter repo** using the following command: `git clone https://github.com/stefan-jansen/automated-trading-strategy-using-machine-learning.git` and change into the new directory.
 3. [Register](https://www.quandl.com/sign-up) for a (free) personal **Quandl account** to obtain an API key that you'll below to download stock price data.  
-3. We'll be using a **Docker image** based on Ubuntu 20.04 with the Anaconda Python distribution installed. It also contains two `conda` environments, one to run backtests with Zipline and one for everything else. To work with the Docker image, run the following command that does several things at once:
+3. We'll be using a **Docker image** based on Ubuntu 20.04 with the Anaconda Python distribution installed. It also contains two `conda` environments, one to run backtests with Zipline and one for everything else. To work with the Docker image, run the following command:
     ```docker
    docker run -it -v $(pwd):/home/manning/liveproject -p 8888:8888 -e QUANDL_API_KEY=<yourkey> --name liveproject appliedai/manning:liveproject bash
     ```
-    - the first time you run the command, it pulls the image with the tag `starter` from the repository `manning` on the Docker Hub account `appliedai` 
-    - creates a local container with the name `liveproject` and runs it in interactive mode,
+    > On **windows**, use the absolute path to the project directory instead of `$(pwd)` and replace the backslashes with forward slashes. 
+    
+    Th above command accomplishes the following all at once:                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+    - The first time you run the command, it pulls the image with the tag `starter` from the repository `manning` on the Docker Hub account `appliedai`. 
+    - Then, it creates a local container with the name `liveproject` and runs it in interactive mode,
     - mounts the current directory containing the starter project files as a volume in the directory `/home/manning/liveproject` inside the container,
     - sets the environment variable `QUANDL_API_KEY` with the value of your key (that you need to fill in for `<yourkey>` - if you have set up a local environment variable of this name you can use `$QUANDL_API_KEY`) to facilitate data download, and
     - starts a `bash` terminal inside the container, resulting in a new command prompt.
@@ -25,6 +29,7 @@ Set up your Python environment with the requisite libraries, install and test Zi
     - You can **switch to another `conda` environment** using the command `conda activate <env_name>` (you can also switch to another environment from a notebook as we'll explain below) 
     - However, before doing so the first time, you may get an error message suggesting you run `conda init bash`. 
         - After doing so, reload the shell with the command `source .bashrc`.
+    - You can exit the container by just typing `exit` in the container shell, and continue your work using `docker start -a -i liveproject` to restart the container in interactive mode.
 5. Next, we **launch the [juypter](https://jupyter.org/) server**. 
     - You can run notebooks using either the traditional or the more recent Jupyter Lab interface; both are available for all `conda` environments. Both commands are long due to several settings and we included shortcuts for both to make your life easier.
     - To run notebooks using the traditional interface, run the shorthand `nb` that executes the following command:
