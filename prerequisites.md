@@ -7,7 +7,7 @@
     
     The last answer is correct; the 2013 Nobel Price in Economics was in part awarded for work that aimed to demonstrate how difficult it is to predict future asset prices based on publicly available data.
 
-    Not sure about a Manning link, but [here](https://en.wikipedia.org/wiki/Efficient-market_hypothesis) is the wikipedia article, the Nobel Price[announcement](https://www.nobelprize.org/prizes/economic-sciences/2013/press-release/), and a [New Yorker](https://www.newyorker.com/news/john-cassidy/inefficient-markets-a-nobel-for-shiller-and-fama) and an [FT](https://www.ft.com/content/78175d1e-34c7-11e3-8148-00144feab7de) article.
+    Not sure about a Manning link, but [here](https://en.wikipedia.org/wiki/Efficient-market_hypothesis) is the wikipedia article, the Nobel Price [announcement](https://www.nobelprize.org/prizes/economic-sciences/2013/press-release/), and a [New Yorker](https://www.newyorker.com/news/john-cassidy/inefficient-markets-a-nobel-for-shiller-and-fama) and an [FT](https://www.ft.com/content/78175d1e-34c7-11e3-8148-00144feab7de) article.
  
 2. In the context of trading, short selling refers to:
     - selling an asset right before the market closes

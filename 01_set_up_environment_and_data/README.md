@@ -8,7 +8,8 @@ Set up your Python environment with the requisite libraries, install and test Zi
 
 1. **Install [Docker Desktop](https://docs.docker.com/desktop/)** for [Windows](https://docs.docker.com/docker-for-windows/install/) or [Mac OS](https://docs.docker.com/docker-for-mac/install/).
     - For guidance on installing Docker for Windows 10 Home, which requires an additional step to enable the virtual machine platform, see [here](https://docs.docker.com/docker-for-windows/install-windows-home/).
-    - Review the "Getting Started" guides for [Windows](https://docs.docker.com/docker-for-windows/) or [Mac OS](https://docs.docker.com/docker-for-mac/). 
+    - Review the "Getting Started" guides for [Windows](https://docs.docker.com/docker-for-windows/) or [Mac OS](https://docs.docker.com/docker-for-mac/).
+    - Please see [here](https://github.com/stefan-jansen/machine-learning-for-trading/tree/master/installation#running-the-notebooks-using-a-docker-container) for additional details on Docker installation and some advice on troubleshooting.
     - Under *Preferences*, look for *Resources* to find out how you can **increase the memory** allocated to the container; the default setting is too low given the size of the data. Increase to at least 4GB.
 2. **Clone the starter repo** using the following command: `git clone https://github.com/stefan-jansen/automated-trading-strategy-using-machine-learning.git` and change into the new directory.
 3. [Register](https://www.quandl.com/sign-up) for a (free) personal **Quandl account** to obtain an API key that you'll below to download stock price data.  
@@ -48,7 +49,7 @@ Set up your Python environment with the requisite libraries, install and test Zi
 6. Our first post-installation task is to test Zipline. Create a `zipline_test.ipynb` notebook in this directory. 
     - Select the `liveproject-zipline` environment from the menu list under `Kernel` > `Change Kernel`.
     - To run Zipline backtests, we need to `ingest` data. See the [Beginner Tutorial](https://www.zipline.io/beginner-tutorial.html) for more information. The image has been configured to store the data in a `.zipline` directory in the working directory (from where you are running the container, which should be the root folder of the project starter code).
-    - You can run the command `zipline ingest` from a notebook cell or the command line (after activating the `conda` environment). It creates the default `quandl` data bundle we'll be working with. 
+    - You can run the command `zipline ingest` from a notebook cell (where you need to prefix it with !) or the command line (after activating the `conda` environment). It creates the default `quandl` data bundle we'll be working with. 
    - You should see numerous messages as Zipline processes around 3,000 stock price series
    - The command `zipline bundles` displays the ingest history.
    - When running a backtest, you will likely encounter an [error](https://github.com/quantopian/zipline/issues/2517) because the current Zipline version requires a country code entry in the `exchanges` table of the `assets-7.sqlite` database where it stores the asset metadata. 
@@ -69,6 +70,7 @@ Set up your Python environment with the requisite libraries, install and test Zi
 
 ## Resources
 
+- For additional detail for a very similar workflow see installation instructions for my book [here](https://github.com/stefan-jansen/machine-learning-for-trading/tree/master/installation).
 - [Docker - Getting Started Guide](https://docs.docker.com/get-started/)
 - [Docker Cheatsheet](https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet8.png)
 - [A comprehensive introduction to Docker, Virtual Machines, and Containers](https://www.freecodecamp.org/news/comprehensive-introductory-guide-to-docker-vms-and-containers-4e42a13ee103/)
